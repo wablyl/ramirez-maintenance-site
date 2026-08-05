@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get a Quote | Ramirez Maintenance & Service</title>
+  <meta name="description" content="Request a free, in-person cleaning quote from Ramirez Maintenance & Service, serving the Bay Area." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-text">RAMIREZ MAINTENANCE & SERVICE</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">Our Story</a>
+        <a href="quote.html" class="btn btn-primary nav-cta">Get a Quote</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">Get a Quote</span>
+      <h1>Tell us about your property</h1>
+      <p>Fill out the form and we'll follow up within one business day to schedule a free, in-person walkthrough.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container quote-layout">
+
+      <div>
+        <div class="contact-card">
+          <h4>Call Us</h4>
+          <p><a href="tel:+14157164758">(415) 716-4758</a></p>
+        </div>
+        <div class="contact-card">
+          <h4>Email Us</h4>
+          <p><a href="mailto:abnerderas@gmail.com">abnerderas@gmail.com</a></p>
+        </div>
+        <div class="contact-card">
+          <h4>Service Area</h4>
+          <p>Bay Area, CA</p>
+        </div>
+        <div class="contact-card">
+          <h4>Availability</h4>
+          <p>Available 24/7 — daily, weekly, monthly, or one-time cleaning, on your schedule.</p>
+        </div>
+      </div>
+
+      <div>
+        <!--
+          FORM SETUP:
+          1. Create a free form at https://formspree.io using abnerderas@gmail.com
+          2. Replace YOUR_FORM_ID in the action URL below with your real endpoint
+          3. Submissions will arrive by email, no backend needed
+        -->
+        <form id="quote-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-grid">
+
+            <div class="form-field">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-field">
+              <label for="company">Company / Property Name</label>
+              <input type="text" id="company" name="company" placeholder="If applicable" />
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-field">
+              <label for="type">Property Type</label>
+              <select id="type" name="property_type">
+                <option value="">Select one</option>
+                <option value="home">Home</option>
+                <option value="office">Office</option>
+                <option value="retail">Retail</option>
+                <option value="medical">Medical / Healthcare</option>
+                <option value="property-management">Rental / Managed Property</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="frequency">Cleaning Frequency Needed</label>
+              <select id="frequency" name="frequency">
+                <option value="">Select one</option>
+                <option value="one-time">One-time clean</option>
+                <option value="daily">Daily</option>
+                <option value="weekly">Weekly</option>
+                <option value="biweekly">Bi-weekly</option>
+                <option value="monthly">Monthly</option>
+                <option value="not-sure">Not sure yet</option>
+              </select>
+            </div>
+
+            <div class="form-field full">
+              <label for="message">Anything else we should know?</label>
+              <textarea id="message" name="message" placeholder="Property size, access details, current provider, etc."></textarea>
+            </div>
+
+          </div>
+
+          <div style="margin-top: 24px;">
+            <button type="submit" class="btn btn-primary">Request My Quote</button>
+          </div>
+
+          <p class="form-note">
+            By submitting, you agree to be contacted about your quote request. We don't share your information with third parties.
+          </p>
+
+          <div id="form-status" class="form-status" role="status"></div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="logo-text">RAMIREZ MAINTENANCE & SERVICE, LLC</span>
+          </div>
+          <p style="margin-top: 10px;">Commercial &amp; residential cleaning across the Bay Area. 25+ years of experience.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+14157164758">(415) 716-4758</a></li>
+            <li><a href="mailto:abnerderas@gmail.com">abnerderas@gmail.com</a></li>
+            <li>Bay Area, CA</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> Ramirez Maintenance &amp; Service, LLC. All rights reserved.</span>
+        <span>Available 24/7</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

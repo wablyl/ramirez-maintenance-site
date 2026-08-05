@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story | Ramirez Maintenance & Service</title>
+  <meta name="description" content="Ramirez Maintenance & Service is an independently owned commercial and residential cleaning company serving the Bay Area, led by Abner Ramirez." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <span class="logo-text">RAMIREZ MAINTENANCE & SERVICE</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">Our Story</a>
+        <a href="quote.html" class="btn btn-primary nav-cta">Get a Quote</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow">Our Story</span>
+      <h1>25 years of cleaning experience, now fully independent</h1>
+      <p>Abner Ramirez has spent 25 years in the commercial and residential cleaning industry, including several years as a contractor for a national cleaning company. In 2023, he launched Ramirez Maintenance &amp; Service, LLC to work directly with clients across the Bay Area.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <span class="eyebrow">Why Ramirez Maintenance &amp; Service</span>
+          <h2>Direct service, no middleman</h2>
+          <p>
+            Going independent means more direct communication and pricing
+            you can trust — you're working with the person who actually
+            cleans your space, not a call center or account manager.
+          </p>
+          <p style="margin-top: 16px;">
+            Every quote starts with an in-person walkthrough. Abner visits
+            your property himself before pricing anything, so estimates are
+            based on what your space actually needs.
+          </p>
+
+          <div class="stat-row">
+            <div class="stat">
+              <div class="num">25+</div>
+              <div class="label">Years Experience</div>
+            </div>
+            <div class="stat">
+              <div class="num">24/7</div>
+              <div class="label">Availability</div>
+            </div>
+            <div class="stat">
+              <div class="num">Bay Area</div>
+              <div class="label">Service Region</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact-card">
+            <h4>Licensed, Bonded &amp; Insured</h4>
+            <p>Ramirez Maintenance &amp; Service, LLC carries $1M/$2M general liability insurance with a $5M umbrella policy, a $100,000 janitorial fidelity bond, and workers' compensation coverage.</p>
+          </div>
+          <div class="contact-card">
+            <h4>What We Clean</h4>
+            <p>Offices, medical and healthcare facilities, retail spaces, managed/rental properties, and homes — not limited to any single property type.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Want to see if we're a fit for your space?</h2>
+      <p>Get a free, in-person quote — Abner will come see your property himself.</p>
+      <a href="quote.html" class="btn btn-on-dark">Get a Free Quote</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <span class="logo-text">RAMIREZ MAINTENANCE & SERVICE, LLC</span>
+          </div>
+          <p style="margin-top: 10px;">Commercial &amp; residential cleaning across the Bay Area. 25+ years of experience.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:+14157164758">(415) 716-4758</a></li>
+            <li><a href="mailto:abnerderas@gmail.com">abnerderas@gmail.com</a></li>
+            <li>Bay Area, CA</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="quote.html">Get a Quote</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="year"></span> Ramirez Maintenance &amp; Service, LLC. All rights reserved.</span>
+        <span>Available 24/7</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
