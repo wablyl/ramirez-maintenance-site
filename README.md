@@ -1,107 +1,126 @@
 # Ramirez Maintenance & Service — Website
 
-A 4-page static site (Home, Services, Our Story, Get a Quote) built with plain
-HTML/CSS/JS. No build tools, no framework, no dependencies — just open
-`index.html` in a browser or use a live-reload extension in VS Code.
+**Live site:** [ramirez-maintenance.com](https://ramirez-maintenance.com)
 
-## Getting started
+A marketing and lead-generation website for Ramirez Maintenance & Service,
+LLC, a Bay Area commercial and residential cleaning business. Built from
+scratch, deployed to a custom domain, and instrumented with analytics —
+designed, built, and maintained end-to-end.
 
-1. Open this folder in VS Code.
-2. Install the **Live Server** extension (by Ritwick Dey).
-3. Right-click `index.html` → **Open with Live Server**.
-4. Edit files, save, and the browser refreshes automatically.
+## What this is
+
+The business previously had no web presence beyond a Facebook page. This
+site gives it:
+
+- A professional home on the web with a real, owned domain
+- A structured overview of all 10 services offered (office, medical,
+  property management, residential, and more)
+- A lead-capture quote request form that emails submissions directly
+- Analytics to track real traffic and lead volume over time
+
+## Tech stack
+
+Deliberately framework-free: a 4-page brochure site doesn't need React or
+a build pipeline, and static HTML loads faster and ranks better for local
+SEO than a client-rendered SPA would.
+
+- **HTML / CSS / vanilla JavaScript** — no framework, no build step
+- **Formspree** — serverless form handling for the quote request form
+  (no backend to host or maintain)
+- **Google Analytics (GA4)** — traffic and lead tracking
+- **GitHub Pages** — hosting, deployed straight from this repo
+- **Cloudflare** — domain registration and DNS
+
+## Architecture / how it's deployed
+
+```
+Push to main
+      │
+      ▼
+GitHub Actions (pages-build-deployment)
+      │
+      ▼
+GitHub Pages  ──HTTPS──▶  ramirez-maintenance.com
+                          (Cloudflare DNS: 4× A records → GitHub Pages IPs,
+                           CNAME for www)
+```
+
+Every push to `main` triggers an automatic rebuild and redeploy — no
+manual upload step. SSL/TLS is provisioned and renewed automatically by
+GitHub Pages via Let's Encrypt.
 
 ## File structure
 
 ```
 cleaning-website/
-├── index.html       Homepage
-├── services.html     Full services list
-├── about.html        Our Story / About page
-├── quote.html         Quote request form
-├── css/style.css      All styling (design tokens at the top)
-├── js/main.js          Mobile nav toggle + form submission logic
-└── images/               Add your photos here
+├── index.html        Homepage
+├── services.html      Full services list (10 services)
+├── about.html          Our Story / About page
+├── quote.html            Quote request form
+├── css/style.css          All styling (design tokens at the top)
+├── js/main.js              Mobile nav toggle + form submission logic
+├── images/                   Photos (currently placeholder)
+└── CNAME                       Custom domain config for GitHub Pages
 ```
 
-## What's already filled in
+## Design notes
 
-- Business name: Ramirez Maintenance & Service, LLC
-- Phone: (415) 716-4758
-- Email: abnerderas@gmail.com
-- Service area: Bay Area, CA
-- 25+ years of experience, 24/7 availability, in-person quotes
-- Full service list (from the business's Facebook page)
+The homepage hero and "How It Works" section lean on a simple visual
+idea instead of a generic template: cleaning is a service people only
+notice when it's *not* done, so the copy and structure emphasize
+reliability and flexibility ("whenever you need it," 24/7 availability,
+in-person quoting) rather than generic marketing language. Typography is
+Space Grotesk (headings) paired with Inter (body) and IBM Plex Mono for
+labels/eyebrows, on a cool-white/teal/deep-navy palette — chosen to avoid
+the generic AI-generated-site look (warm cream + terracotta, or dark mode
+with one neon accent) in favor of something a real service business would
+plausibly commission.
 
-## What's confirmed on insurance
+## Local development
 
-- Confirmed via certificate of insurance: $1M/$2M general liability,
-  $5M umbrella policy, $100,000 janitorial fidelity bond, workers'
-  compensation, and contractors errors & omissions coverage. Added as
-  real numbers to `about.html` and the homepage trust strip
-  ("Licensed, Bonded & Insured").
-- The certificate lists Coverall North America Inc as an additional
-  insured/certificate holder — meaning this policy is tied to the
-  Coverall contractor relationship. Worth confirming with the insurance
-  agent (Escobedo Insurance Agency, Janette Rios, 951-213-4860) that the
-  same policy covers independent clients too, separate from the website.
-- Policy renewal dates to track: GL/auto/workers' comp/E&O renew
-  03/31/2026, umbrella/bond renew 04/18/2026.
+No build tools required.
 
-## Still open — confirm with your dad
+1. Clone the repo and open the folder in VS Code (or any editor).
+2. Install the **Live Server** VS Code extension for auto-refresh on save,
+   or just open `index.html` directly in a browser.
+3. Edit, save, refresh.
 
-- [ ] **Whether to name "Coverall" directly** — the certificate confirms
-      the past employer was Coverall, but that doesn't tell us if his
-      contractor agreement restricts naming them publicly on a competing
-      business's site. Check that agreement before changing the generic
-      wording in `about.html`.
-- [ ] **Photos** — team, equipment, before/after shots, or completed jobs
-      for `images/`.
-- [ ] **Logo** — there isn't one yet, so the site uses a text wordmark
-      ("RAMIREZ" / "Maintenance & Service") in the header and footer,
-      styled to resemble the existing Facebook page branding. Works fine
-      as-is; swap in a real logo image later if one gets made.
+## Deployment
 
-## Setting up the quote form (no backend needed)
+Already configured — pushing to `main` is the entire deploy process:
 
-The form in `quote.html` posts to [Formspree](https://formspree.io), a free
-service that forwards form submissions to an email inbox.
+```bash
+git add .
+git commit -m "your change"
+git push
+```
 
-1. Create a free account at formspree.io using **abnerderas@gmail.com**
-   and make a new form.
-2. Copy the endpoint URL they give you (looks like
-   `https://formspree.io/f/abcd1234`).
-3. In `quote.html`, replace `YOUR_FORM_ID` in the `<form action="...">`
-   attribute with your real endpoint.
-4. Test it — submit the form and confirm the email arrives.
+GitHub Pages rebuilds automatically (check the **Actions** tab for status)
+and the live site updates within a minute or two.
 
-## Basic SEO
+## Content status — what's real vs. placeholder
 
-- Each page already has a real `<title>` and `<meta name="description">`.
-- Set up a free
-  [Google Business Profile](https://www.google.com/business/) — this
-  matters more for local search ("office cleaning near me," "commercial
-  cleaning Bay Area") than almost anything else on the site.
-- Add the site to
-  [Google Search Console](https://search.google.com/search-console) after
-  deploying.
+Business details (name, phone, email, service area, 25+ years of
+experience, licensing/insurance figures) are real and sourced directly
+from the business owner. Two things are still open:
 
-## Deployment (free options)
+- [ ] **Formspree endpoint not yet connected** — `quote.html` currently
+      points at a placeholder form ID. Create a form at
+      [formspree.io](https://formspree.io) and swap in the real endpoint
+      before the quote form will actually deliver submissions by email.
+- [ ] **Photos** — `images/` is currently empty. Team, equipment, and
+      completed-job photos would replace the current text-only sections.
 
-- **[Netlify](https://netlify.com)** — drag-and-drop the folder, or connect
-  a GitHub repo for automatic redeploys on push.
-- **[Vercel](https://vercel.com)** — similar, GitHub-connected.
-- **[GitHub Pages](https://pages.github.com)** — free if this is already in
-  a GitHub repo (recommended anyway, for version history).
+Two smaller open questions, more business decisions than technical ones:
 
-All three support a custom domain (e.g. `ramirezmaintenance.com`) for free
-or close to it — you just need to buy the domain (~$12/year from a
-registrar like Namecheap or Google Domains).
+- Whether to name the owner's former employer (a national cleaning
+  franchise) directly in the "Our Story" copy, currently left generic
+  pending a check of the old contractor agreement.
+- Confirming with the insurance agent that the existing general liability
+  policy (currently listed as an additional insured to the former
+  employer) also covers independent client work.
 
-## After launch — tracking (for your resume, too)
+## Author
 
-Add [Google Analytics](https://analytics.google.com) once it's live.
-That's how you'll get real numbers later — traffic, quote form
-submissions, etc. — which turns "I built a website" into "I built and
-maintained a website that generated X leads over Y months," a much
-stronger resume line.
+Built by [Abner Ramirez Palacios](https://github.com/wablyl) as a freelance
+project for a family business.
