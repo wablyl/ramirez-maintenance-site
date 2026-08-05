@@ -64,7 +64,7 @@ if (quoteForm) {
 // Mark current page's nav link as active
 // ===========================================================
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.nav-links a').forEach((link) => {
+document.querySelectorAll('.nav-links a:not(.nav-cta)').forEach((link) => {
   const href = link.getAttribute('href');
   if (href === currentPage) link.classList.add('active');
 });

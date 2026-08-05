@@ -197,6 +197,9 @@ p { color: var(--ink-soft); }
 .nav-links a:hover,
 .nav-links a.active { color: var(--ink); }
 
+.nav-links a.nav-cta.active,
+.nav-links a.nav-cta:hover { color: var(--white); }
+
 .nav-toggle {
   display: none;
   flex-direction: column;
